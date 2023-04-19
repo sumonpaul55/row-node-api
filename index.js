@@ -24,7 +24,7 @@ app.createServer = () => {
   });
 };
 //handle request and handle response
-const handleRequestRes = (req, res) => {
+app.handleRequestRes = (req, res) => {
   //response handlers
   res.end("hello world");
 };
