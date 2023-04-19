@@ -18,7 +18,7 @@ app.config = {
 
 //create server
 app.createServer = () => {
-  const server = http.createServer(handleRequestRes);
+  const server = http.createServer(app.handleRequestRes);
   server.listen(app.config.port, () => {
     console.log(`listening to ${app.config.port}`);
   });
@@ -28,3 +28,6 @@ const handleRequestRes = (req, res) => {
   //response handlers
   res.end("hello world");
 };
+
+// start the server
+app.createServer();
