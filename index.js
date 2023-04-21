@@ -26,7 +26,7 @@ app.createServer = () => {
 //handle request and handle response
 app.handleRequestRes = (req, res) => {
   //response handlers
-  res.end("hello world");
+  res.end("something is better than nothing");
 };
 
 // start the server
