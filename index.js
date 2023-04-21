@@ -8,6 +8,7 @@
 
 // depandecies
 const http = require("http");
+const url = require("url");
 // app objects or module scafolding
 const app = {};
 
@@ -25,6 +26,13 @@ app.createServer = () => {
 };
 //handle request and handle response
 app.handleRequestRes = (req, res) => {
+  //request handle response
+  //get the url and parse it
+
+  const parsedUrl = url.parse(req.url, false);
+  const path = parsedUrl.pathname;
+  const trimedPath = path.replace(/^\/+|\/+$/g, "");
+  console.log(trimedPath);
   //response handlers
   res.end("something is better than nothing");
 };
