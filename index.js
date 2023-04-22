@@ -32,9 +32,13 @@ app.handleRequestRes = (req, res) => {
   const parsedUrl = url.parse(req.url, false);
   const path = parsedUrl.pathname;
   const trimedPath = path.replace(/^\/+|\/+$/g, "");
-  console.log(trimedPath);
+  // console.log(trimedPath);/
+  //method name
+  const method = req.method.toLowerCase();
+  console.log(method);
   //response handlers
-  res.end("something is better than nothing");
+  res.end("something is better than nothing. Yes");
+  //
 };
 
 // start the server
