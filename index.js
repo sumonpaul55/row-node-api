@@ -17,6 +17,7 @@ const app = {};
 app.config = {
   port: 3000,
 };
+app.handleResReq = handleReqRes;
 
 //create server
 app.createServer = () => {
@@ -26,6 +27,5 @@ app.createServer = () => {
   });
 };
 //handle request and handle response
-app.handleResReq = handleReqRes;
 // start the server
 app.createServer();

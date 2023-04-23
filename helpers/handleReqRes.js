@@ -19,7 +19,7 @@ handler.handleReqRes = (req, res) => {
   const parsedUrl = url.parse(req.url, false);
   const path = parsedUrl.pathname;
   const trimedPath = path.replace(/^\/+|\/+$/g, "");
-  console.log(trimedPath);
+  // console.log(trimedPath);
   //method name
   const method = req.method.toLowerCase();
   // console.log(method);
@@ -43,10 +43,11 @@ handler.handleReqRes = (req, res) => {
 
   //realdata received from server using string decoder
   const decoder = new StringDecoder("utf8");
+  // console.log(decoder); it's return [symble(KNativeDecoder)]:<Buffer 00 000 00 00 00 001>
   let realData = "";
 
   const chosenHandler = routes[trimedPath] ? routes[trimedPath] : NotFound;
-
+  // console.log(trimedPath); it's return path after trimmed
   chosenHandler(requestProperties, (statusCode, payLoad) => {
     statusCode = typeof statusCode === "number" ? statusCode : 500;
     payLoad = typeof payLoad === "object" ? payLoad : {};
