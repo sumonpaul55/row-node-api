@@ -9,9 +9,9 @@
 // depandecies
 const http = require("http");
 const { handleReqRes } = require("./helpers/handleReqRes");
+
 // app objects or module scafolding
 const app = {};
-app.handleResReq = handleReqRes;
 
 //configerationa
 app.config = {
@@ -26,6 +26,6 @@ app.createServer = () => {
   });
 };
 //handle request and handle response
-
+app.handleResReq = handleReqRes;
 // start the server
 app.createServer();
